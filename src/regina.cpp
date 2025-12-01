@@ -37,34 +37,6 @@
  * DAMAGE.
  */
 
-/* Code Manipulation API Sample:
- * memtrace_x86.c
- *
- * Collects the instruction address, data address, and size of every
- * memory reference and dumps the results to a file.
- * This is an x86-specific implementation of a memory tracing client.
- * For a simpler (and slower) arch-independent version, please see memtrace_simple.c.
- *
- * Illustrates how to create generated code in a local code cache and
- * perform a lean procedure call to that generated code.
- *
- * (1) Fills a buffer and dumps the buffer when it is full.
- * (2) Inlines the buffer filling code to avoid a full context switch.
- * (3) Uses a lean procedure call for clean calls to reduce code cache size.
- *
- * This sample illustrates
- * - the use of drutil_expand_rep_string() to expand string loops to obtain
- *   every memory reference;
- * - the use of drx_expand_scatter_gather() to expand scatter/gather instrs
- *   into a set of functionally equivalent stores/loads;
- * - the use of drutil_opnd_mem_size_in_bytes() to obtain the size of OP_enter
- *   memory references.
- *
- * The OUTPUT_TEXT define controls the format of the trace: text or binary.
- * Creating a text trace file makes the tool an order of magnitude (!) slower
- * than creating a binary file; thus, the default is binary.
- */
-
 #include "dr_api.h"
 #include "drmgr.h"
 #include "drreg.h"
