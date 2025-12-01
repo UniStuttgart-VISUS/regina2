@@ -1,3 +1,9 @@
+/*
+ * Based on DynamoRIO memtrace sample.
+ * Modified for Regina2 project.
+ * See license below.
+ */
+
 /* ******************************************************************************
  * Copyright (c) 2011-2021 Google, Inc.  All rights reserved.
  * Copyright (c) 2010 Massachusetts Institute of Technology  All rights reserved.
@@ -173,8 +179,7 @@ dr_client_main(client_id_t id, int argc, const char* argv[]) {
         NULL, /* optional name of operation we should precede */
         NULL, /* optional name of operation we should follow */
         0 }; /* numeric priority */
-    dr_set_client_name("DynamoRIO Sample Client 'memtrace'",
-        "http://dynamorio.org/issues");
+    dr_set_client_name("regina2 -- mem- and call-trace", "-");
     page_size = dr_page_size();
     drmgr_init();
     drutil_init();
